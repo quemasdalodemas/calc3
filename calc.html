@@ -3,7 +3,7 @@
     <title>Calc</title>
     <script language=javascript type="text/javascript">
       var version='3'
-      var plus,minus,divide,multiply,max,pow
+      var plus,minus,divide,multiply,max,pow,min
 
       function initialize(){
        document.getElementById("version").innerHTML = "<b>v"+version+"</b>";
@@ -13,6 +13,7 @@
        multiply=document.calc.operator.options[3]
        max=document.calc.operator.options[4]
        pow=document.calc.operator.options[5]
+       min=document.calc.operator.options[6]
       }
 
       function calculate(){
@@ -30,6 +31,8 @@
               document.calc.answer.value = Math.max(a,b)
           if (pow.selected)
               document.calc.answer.value = Math.pow(a,b)
+          if (min.selected)
+              document.calc.answer.value = Math.min(a,b)
       }
     </script>
   </head>
@@ -47,6 +50,7 @@
         <option value=multiply>*
         <option value=max>max
         <option value=pow>**
+        <option value=min>min
       </select>
       <input type=text name=val2 size=10>
       =
